@@ -6,7 +6,7 @@
   <connection class='federated'>
     <named-connections>
       <named-connection caption='Contacts' name='sqlserver.1rdhv7604wood815j1s7z0ojxh5hleaf'>
-        <connection authentication='sqlserver' class='sqlserver' dbname='osc-dwh' minimum-driver-version='SQL Server Native Client 10.0' odbc-native-protocol='yes' one-time-sql='' server='dev-du1-report1' server-oauth='' username='osc-admin' workgroup-auth-mode='prompt' />
+        <connection authentication='sqlserver' class='sqlserver' dbname='osc-dwh' minimum-driver-version='SQL Server Native Client 10.0' odbc-native-protocol='yes' one-time-sql='' server='dev-du1-report1' server-oauth='' username='osc-admin' workgroup-auth-mode='embedd' />
       </named-connection>
     </named-connections>
     <relation join='left' type='join'>
