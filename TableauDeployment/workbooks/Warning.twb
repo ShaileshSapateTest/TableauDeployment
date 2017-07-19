@@ -1,0 +1,2065 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10200.17.0223.1918                               -->
+<workbook source-build='10.2.0 (10200.17.0223.1918)' source-platform='win' version='10.2' xml:base='http://dev-du1-report1.uknorth.cloudapp.azure.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <repository-location id='Warning' path='/workbooks' revision='1.2' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Warning' inline='true' name='sqlproxy.0okfjkc178dlir1c89qgu08zoud6' version='10.2'>
+      <repository-location derived-from='/datasources/Warning?rev=1.3' id='Warning' path='/datasources' revision='1.4' />
+      <connection channel='http' class='sqlproxy' dbname='Warning' directory='/dataserver' port='80' server='localhost' server-oauth='' username='' workgroup-auth-mode='prompt'>
+        <relation name='sqlproxy' table='[sqlproxy]' type='table' />
+        <calculations>
+          <calculation column='[Number of Records]' formula='1' />
+        </calculations>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Age (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Age (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Age (Custom SQL Query)</remote-alias>
+            <ordinal>77</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>45</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Audit_Create_Timestamp (Custom SQL Query)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Audit_Create_Timestamp (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Audit_Create_Timestamp (Custom SQL Query)</remote-alias>
+            <ordinal>71</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Audit_Create_Timestamp (DimPerson)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Audit_Create_Timestamp (DimPerson)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Audit_Create_Timestamp (DimPerson)</remote-alias>
+            <ordinal>39</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Audit Create Timestamp (DimPerson)</caption>
+            <family>DimPerson</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Audit_Create_Timestamp (DimTeam1)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Audit_Create_Timestamp (DimTeam1)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Audit_Create_Timestamp (DimTeam1)</remote-alias>
+            <ordinal>96</ordinal>
+            <layered>true</layered>
+            <caption>Audit Create Timestamp (DimTeam1)</caption>
+            <family>SubjectDimTeam</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Audit_Create_Timestamp</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Audit_Create_Timestamp]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Audit_Create_Timestamp</remote-alias>
+            <ordinal>88</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Audit Create Timestamp</caption>
+            <family>DimTeam</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Audit_Update_Timestamp (Custom SQL Query)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Audit_Update_Timestamp (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Audit_Update_Timestamp (Custom SQL Query)</remote-alias>
+            <ordinal>72</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Audit_Update_Timestamp (DimPerson)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Audit_Update_Timestamp (DimPerson)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Audit_Update_Timestamp (DimPerson)</remote-alias>
+            <ordinal>40</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Audit Update Timestamp (DimPerson)</caption>
+            <family>DimPerson</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Audit_Update_Timestamp (DimTeam1)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Audit_Update_Timestamp (DimTeam1)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Audit_Update_Timestamp (DimTeam1)</remote-alias>
+            <ordinal>97</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Audit Update Timestamp (DimTeam1)</caption>
+            <family>SubjectDimTeam</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Audit_Update_Timestamp</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Audit_Update_Timestamp]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Audit_Update_Timestamp</remote-alias>
+            <ordinal>89</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Audit Update Timestamp</caption>
+            <family>DimTeam</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AuthorId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AuthorId]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>AuthorId</remote-alias>
+            <ordinal>4</ordinal>
+            <layered>true</layered>
+            <caption>Author Id</caption>
+            <family>DimWarning</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ClientAwareFlag</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[ClientAwareFlag]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>ClientAwareFlag</remote-alias>
+            <ordinal>9</ordinal>
+            <layered>true</layered>
+            <caption>Client Aware Flag</caption>
+            <family>DimWarning</family>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Comments</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Comments]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Comments</remote-alias>
+            <ordinal>11</ordinal>
+            <layered>true</layered>
+            <family>DimWarning</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CreatedOn</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[CreatedOn]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>CreatedOn</remote-alias>
+            <ordinal>5</ordinal>
+            <layered>true</layered>
+            <caption>Created On</caption>
+            <family>DimWarning</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DateOfBirth_DateTime (Custom SQL Query)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DateOfBirth_DateTime (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>DateOfBirth_DateTime (Custom SQL Query)</remote-alias>
+            <ordinal>73</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DateOfBirth_DateTime</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DateOfBirth_DateTime]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>DateOfBirth_DateTime</remote-alias>
+            <ordinal>41</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>DateOfBirth DateTime</caption>
+            <family>DimPerson</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DateOfDeath_DateTime (Custom SQL Query)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DateOfDeath_DateTime (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>DateOfDeath_DateTime (Custom SQL Query)</remote-alias>
+            <ordinal>74</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DateOfDeath_DateTime</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DateOfDeath_DateTime]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>DateOfDeath_DateTime</remote-alias>
+            <ordinal>42</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>DateOfDeath DateTime</caption>
+            <family>DimPerson</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>DimPersonKey (Custom SQL Query)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DimPersonKey (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>DimPersonKey (Custom SQL Query)</remote-alias>
+            <ordinal>47</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>DimPersonKey◙</caption>
+            <family>AuthorCustom</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DimPersonKey</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DimPersonKey]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>DimPersonKey</remote-alias>
+            <ordinal>15</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Dim Person Key</caption>
+            <family>DimPerson</family>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DimTeamKey (DimTeam1)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DimTeamKey (DimTeam1)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>DimTeamKey (DimTeam1)</remote-alias>
+            <ordinal>91</ordinal>
+            <layered>true</layered>
+            <family>SubjectDimTeam</family>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DimTeamKey</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DimTeamKey]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>DimTeamKey</remote-alias>
+            <ordinal>83</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Dim Team Key</caption>
+            <family>DimTeam</family>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DimWarningKey</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DimWarningKey]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>DimWarningKey</remote-alias>
+            <ordinal>1</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Dim Warning Key</caption>
+            <family>DimWarning</family>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>Dim_DateOfBirth_DateKey (Custom SQL Query)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Dim_DateOfBirth_DateKey (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Dim_DateOfBirth_DateKey (Custom SQL Query)</remote-alias>
+            <ordinal>54</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Dim_DateOfBirth_DateKey</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Dim_DateOfBirth_DateKey]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Dim_DateOfBirth_DateKey</remote-alias>
+            <ordinal>22</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Dim DateOfBirth DateKey</caption>
+            <family>DimPerson</family>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>Dim_DateOfDeath_DateKey (Custom SQL Query)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Dim_DateOfDeath_DateKey (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Dim_DateOfDeath_DateKey (Custom SQL Query)</remote-alias>
+            <ordinal>55</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Dim_DateOfDeath_DateKey</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Dim_DateOfDeath_DateKey]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Dim_DateOfDeath_DateKey</remote-alias>
+            <ordinal>23</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Dim DateOfDeath DateKey</caption>
+            <family>DimPerson</family>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>Dim_Estimated_DateOfBirth_DateKey (Custom SQL Query)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Dim_Estimated_DateOfBirth_DateKey (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Dim_Estimated_DateOfBirth_DateKey (Custom SQL Query)</remote-alias>
+            <ordinal>56</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Dim_Estimated_DateOfBirth_DateKey</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Dim_Estimated_DateOfBirth_DateKey]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Dim_Estimated_DateOfBirth_DateKey</remote-alias>
+            <ordinal>24</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Dim Estimated DateOfBirth DateKey</caption>
+            <family>DimPerson</family>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>Dim_Estimated_DateOfDelivery_DateKey (Custom SQL Query)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Dim_Estimated_DateOfDelivery_DateKey (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Dim_Estimated_DateOfDelivery_DateKey (Custom SQL Query)</remote-alias>
+            <ordinal>57</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Dim_Estimated_DateOfDelivery_DateKey</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Dim_Estimated_DateOfDelivery_DateKey]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Dim_Estimated_DateOfDelivery_DateKey</remote-alias>
+            <ordinal>25</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Dim Estimated DateOfDelivery DateKey</caption>
+            <family>DimPerson</family>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Dim_Subject_PersonKey</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Dim_Subject_PersonKey]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Dim_Subject_PersonKey</remote-alias>
+            <ordinal>12</ordinal>
+            <layered>true</layered>
+            <caption>Dim Subject PersonKey</caption>
+            <family>DimWarning</family>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EstimatedDateOfBirth_DateTime (Custom SQL Query)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[EstimatedDateOfBirth_DateTime (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>EstimatedDateOfBirth_DateTime (Custom SQL Query)</remote-alias>
+            <ordinal>75</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EstimatedDateOfBirth_DateTime</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[EstimatedDateOfBirth_DateTime]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>EstimatedDateOfBirth_DateTime</remote-alias>
+            <ordinal>43</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>EstimatedDateOfBirth DateTime</caption>
+            <family>DimPerson</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EstimatedDateOfDelivery_DateTime (Custom SQL Query)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[EstimatedDateOfDelivery_DateTime (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>EstimatedDateOfDelivery_DateTime (Custom SQL Query)</remote-alias>
+            <ordinal>76</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EstimatedDateOfDelivery_DateTime</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[EstimatedDateOfDelivery_DateTime]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>EstimatedDateOfDelivery_DateTime</remote-alias>
+            <ordinal>44</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>EstimatedDateOfDelivery DateTime</caption>
+            <family>DimPerson</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ethnicity_SubType (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Ethnicity_SubType (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Ethnicity_SubType (Custom SQL Query)</remote-alias>
+            <ordinal>59</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ethnicity_SubType</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Ethnicity_SubType]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Ethnicity_SubType</remote-alias>
+            <ordinal>27</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Ethnicity SubType</caption>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ethnicity_Type (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Ethnicity_Type (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Ethnicity_Type (Custom SQL Query)</remote-alias>
+            <ordinal>58</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ethnicity_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Ethnicity_Type]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Ethnicity_Type</remote-alias>
+            <ordinal>26</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Ethnicity Type</caption>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gender (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Gender (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Gender (Custom SQL Query)</remote-alias>
+            <ordinal>51</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Gender]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Gender</remote-alias>
+            <ordinal>19</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Id (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Id (Custom SQL Query)</remote-alias>
+            <ordinal>48</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id (Custom SQL Query1)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Id (Custom SQL Query1)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Id (Custom SQL Query1)</remote-alias>
+            <ordinal>80</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>SumrefrralworkflowCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id (DimPerson)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Id (DimPerson)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Id (DimPerson)</remote-alias>
+            <ordinal>16</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id (DimTeam1)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Id (DimTeam1)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Id (DimTeam1)</remote-alias>
+            <ordinal>92</ordinal>
+            <layered>true</layered>
+            <family>SubjectDimTeam</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Id]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Id</remote-alias>
+            <ordinal>84</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>DimTeam</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Immirgration_Status (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Immirgration_Status (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Immirgration_Status (Custom SQL Query)</remote-alias>
+            <ordinal>62</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Immirgration_Status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Immirgration_Status]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Immirgration_Status</remote-alias>
+            <ordinal>30</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Immirgration Status</caption>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Item_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Item_Type]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Item_Type</remote-alias>
+            <ordinal>81</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>SumrefrralworkflowCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Language (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Language (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Language (Custom SQL Query)</remote-alias>
+            <ordinal>65</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Language</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Language]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Language</remote-alias>
+            <ordinal>33</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MaritalStatus (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MaritalStatus (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>MaritalStatus (Custom SQL Query)</remote-alias>
+            <ordinal>53</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MaritalStatus</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MaritalStatus]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>MaritalStatus</remote-alias>
+            <ordinal>21</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Marital Status</caption>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Name (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Name (Custom SQL Query)</remote-alias>
+            <ordinal>50</ordinal>
+            <layered>true</layered>
+            <caption>AuthorName </caption>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name (DimPerson)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Name (DimPerson)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Name (DimPerson)</remote-alias>
+            <ordinal>18</ordinal>
+            <layered>true</layered>
+            <caption>SubjectName</caption>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name (DimTeam1)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Name (DimTeam1)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Name (DimTeam1)</remote-alias>
+            <ordinal>93</ordinal>
+            <layered>true</layered>
+            <caption>SubjectTeamName</caption>
+            <family>SubjectDimTeam</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Name]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>85</ordinal>
+            <layered>true</layered>
+            <caption>AuthorTeamName</caption>
+            <family>DimTeam</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Nationality (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Nationality (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Nationality (Custom SQL Query)</remote-alias>
+            <ordinal>61</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Nationality</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Nationality]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Nationality</remote-alias>
+            <ordinal>29</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>Number of Records</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Number of Records]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Number of Records</remote-alias>
+            <ordinal>98</ordinal>
+            <layered>true</layered>
+            <caption>Number of Records</caption>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>0</attribute>
+              <attribute datatype='string' name='formula'>&quot;1&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Occupation (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Occupation (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Occupation (Custom SQL Query)</remote-alias>
+            <ordinal>64</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Occupation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Occupation]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Occupation</remote-alias>
+            <ordinal>32</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Person_Type (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Person_Type (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Person_Type (Custom SQL Query)</remote-alias>
+            <ordinal>69</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Person_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Person_Type]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Person_Type</remote-alias>
+            <ordinal>37</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Person Type</caption>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Religion (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Religion (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Religion (Custom SQL Query)</remote-alias>
+            <ordinal>60</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Religion</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Religion]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Religion</remote-alias>
+            <ordinal>28</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Residency (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Residency (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Residency (Custom SQL Query)</remote-alias>
+            <ordinal>63</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Residency</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Residency]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Residency</remote-alias>
+            <ordinal>31</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Reviewonorafterdate</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Reviewonorafterdate]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Reviewonorafterdate</remote-alias>
+            <ordinal>10</ordinal>
+            <layered>true</layered>
+            <family>DimWarning</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SexualOrientation (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SexualOrientation (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>SexualOrientation (Custom SQL Query)</remote-alias>
+            <ordinal>52</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SexualOrientation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SexualOrientation]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>SexualOrientation</remote-alias>
+            <ordinal>20</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Sexual Orientation</caption>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Source_Timestamp (Custom SQL Query)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Source_Timestamp (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Source_Timestamp (Custom SQL Query)</remote-alias>
+            <ordinal>70</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Source_Timestamp (DimPerson)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Source_Timestamp (DimPerson)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Source_Timestamp (DimPerson)</remote-alias>
+            <ordinal>38</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Source Timestamp (DimPerson)</caption>
+            <family>DimPerson</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Source_Timestamp (DimTeam1)</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Source_Timestamp (DimTeam1)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Source_Timestamp (DimTeam1)</remote-alias>
+            <ordinal>95</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Source Timestamp (DimTeam1)</caption>
+            <family>SubjectDimTeam</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Source_Timestamp</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Source_Timestamp]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Source_Timestamp</remote-alias>
+            <ordinal>87</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Source Timestamp</caption>
+            <family>DimTeam</family>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Status]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Status</remote-alias>
+            <ordinal>8</ordinal>
+            <layered>true</layered>
+            <family>DimWarning</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SubjectId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SubjectId]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>SubjectId</remote-alias>
+            <ordinal>3</ordinal>
+            <layered>true</layered>
+            <caption>Subject Id</caption>
+            <family>DimWarning</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Title (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Title (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Title (Custom SQL Query)</remote-alias>
+            <ordinal>49</ordinal>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Title (DimPerson)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Title (DimPerson)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Title (DimPerson)</remote-alias>
+            <ordinal>17</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Title]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Title</remote-alias>
+            <ordinal>7</ordinal>
+            <layered>true</layered>
+            <family>DimWarning</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>1000</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type (DimTeam1)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Type (DimTeam1)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Type (DimTeam1)</remote-alias>
+            <ordinal>94</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>SubjectDimTeam</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Type]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>Type</remote-alias>
+            <ordinal>86</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>DimTeam</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WarningId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[WarningId]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>WarningId</remote-alias>
+            <ordinal>2</ordinal>
+            <layered>true</layered>
+            <caption>Warning Id</caption>
+            <family>DimWarning</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WarningType</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[WarningType]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>WarningType</remote-alias>
+            <ordinal>6</ordinal>
+            <layered>true</layered>
+            <caption>Warning Type</caption>
+            <family>DimWarning</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>500</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contact_type (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[contact_type (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>contact_type (Custom SQL Query)</remote-alias>
+            <ordinal>66</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contact_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[contact_type]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>contact_type</remote-alias>
+            <ordinal>34</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Contact Type</caption>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contact_usage (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[contact_usage (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>contact_usage (Custom SQL Query)</remote-alias>
+            <ordinal>67</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contact_usage</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[contact_usage]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>contact_usage</remote-alias>
+            <ordinal>35</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Contact Usage</caption>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contact_value (Custom SQL Query)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[contact_value (Custom SQL Query)]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>contact_value (Custom SQL Query)</remote-alias>
+            <ordinal>68</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>AuthorCustom</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contact_value</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[contact_value]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>contact_value</remote-alias>
+            <ordinal>36</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <caption>Contact Value</caption>
+            <family>DimPerson</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>dim_owner_teamkey</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[dim_owner_teamkey]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>dim_owner_teamkey</remote-alias>
+            <ordinal>79</ordinal>
+            <hidden>true</hidden>
+            <layered>true</layered>
+            <family>SumrefrralworkflowCustom</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>teamId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[teamId]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>teamId</remote-alias>
+            <ordinal>13</ordinal>
+            <layered>true</layered>
+            <caption>Team Id</caption>
+            <family>DimWarning</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='boolean' name='CAP_CREATE_TEMP_TABLES'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_BLENDING_ALWAYS_USE_LOCAL_MAPPING_TABLES'>false</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_BLENDING_PREFER_LOCAL_MAPPING_TABLES'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_BLENDING_REMOTE_MAPPING_TABLES'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_SORT_BY'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_SUBQUERIES'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_SUBQUERY_QUERY_CONTEXT'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_SUPPORTS_LODJOINS'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_USE_QUERY_FUSION'>true</attribute>
+              <attribute datatype='boolean' name='CAP_SUPPORTS_SPLIT_FROM_LEFT'>true</attribute>
+              <attribute datatype='boolean' name='CAP_SUPPORTS_SPLIT_FROM_RIGHT'>true</attribute>
+              <attribute datatype='integer' name='charset'>0</attribute>
+              <attribute datatype='string' name='class'>&quot;sqlserver&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;LROOT&quot;</attribute>
+              <attribute datatype='string' name='datasource'>&quot;&lt;?xml version=&apos;1.0&apos; encoding=&apos;utf-8&apos; ?&gt;&#10;&#10;&lt;datasource :source-version=&apos;10.2&apos; formatted-name=&apos;repoItem4353811493040322827&apos; inline=&apos;true&apos; version=&apos;10.2&apos; xml:base=&apos;http://dev-du1-report1.uknorth.cloudapp.azure.com&apos; xmlns:user=&apos;http://www.tableausoftware.com/xml/user&apos;&gt;&#10;  &lt;repository-location derived-from=&apos;/datasources/Warning?rev=1.3&apos; id=&apos;Warning&apos; path=&apos;/datasources&apos; revision=&apos;1.4&apos; /&gt;&#10;  &lt;connection channel=&apos;http&apos; class=&apos;sqlproxy&apos; dbname=&apos;Warning&apos; directory=&apos;/dataserver&apos; port=&apos;80&apos; server=&apos;dev-du1-report1.uknorth.cloudapp.azure.com&apos;&gt;&#10;    &lt;relation name=&apos;sqlproxy&apos; table=&apos;[sqlproxy]&apos; type=&apos;table&apos; /&gt;&#10;    &lt;cols&gt;&#10;      &lt;map key=&apos;[Age (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Age (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Age]&apos; value=&apos;[sqlproxy].[Age]&apos; /&gt;&#10;      &lt;map key=&apos;[Audit_Create_Timestamp (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Audit_Create_Timestamp (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Audit_Create_Timestamp (DimPerson)]&apos; value=&apos;[sqlproxy].[Audit_Create_Timestamp (DimPerson)]&apos; /&gt;&#10;      &lt;map key=&apos;[Audit_Create_Timestamp (DimTeam1)]&apos; value=&apos;[sqlproxy].[Audit_Create_Timestamp (DimTeam1)]&apos; /&gt;&#10;      &lt;map key=&apos;[Audit_Create_Timestamp]&apos; value=&apos;[sqlproxy].[Audit_Create_Timestamp]&apos; /&gt;&#10;      &lt;map key=&apos;[Audit_Update_Timestamp (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Audit_Update_Timestamp (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Audit_Update_Timestamp (DimPerson)]&apos; value=&apos;[sqlproxy].[Audit_Update_Timestamp (DimPerson)]&apos; /&gt;&#10;      &lt;map key=&apos;[Audit_Update_Timestamp (DimTeam1)]&apos; value=&apos;[sqlproxy].[Audit_Update_Timestamp (DimTeam1)]&apos; /&gt;&#10;      &lt;map key=&apos;[Audit_Update_Timestamp]&apos; value=&apos;[sqlproxy].[Audit_Update_Timestamp]&apos; /&gt;&#10;      &lt;map key=&apos;[AuthorId]&apos; value=&apos;[sqlproxy].[AuthorId]&apos; /&gt;&#10;      &lt;map key=&apos;[ClientAwareFlag]&apos; value=&apos;[sqlproxy].[ClientAwareFlag]&apos; /&gt;&#10;      &lt;map key=&apos;[Comments]&apos; value=&apos;[sqlproxy].[Comments]&apos; /&gt;&#10;      &lt;map key=&apos;[CreatedOn]&apos; value=&apos;[sqlproxy].[CreatedOn]&apos; /&gt;&#10;      &lt;map key=&apos;[DateOfBirth_DateTime (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[DateOfBirth_DateTime (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[DateOfBirth_DateTime]&apos; value=&apos;[sqlproxy].[DateOfBirth_DateTime]&apos; /&gt;&#10;      &lt;map key=&apos;[DateOfDeath_DateTime (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[DateOfDeath_DateTime (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[DateOfDeath_DateTime]&apos; value=&apos;[sqlproxy].[DateOfDeath_DateTime]&apos; /&gt;&#10;      &lt;map key=&apos;[DimPersonKey (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[DimPersonKey (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[DimPersonKey]&apos; value=&apos;[sqlproxy].[DimPersonKey]&apos; /&gt;&#10;      &lt;map key=&apos;[DimTeamKey (DimTeam1)]&apos; value=&apos;[sqlproxy].[DimTeamKey (DimTeam1)]&apos; /&gt;&#10;      &lt;map key=&apos;[DimTeamKey]&apos; value=&apos;[sqlproxy].[DimTeamKey]&apos; /&gt;&#10;      &lt;map key=&apos;[DimWarningKey]&apos; value=&apos;[sqlproxy].[DimWarningKey]&apos; /&gt;&#10;      &lt;map key=&apos;[Dim_DateOfBirth_DateKey (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Dim_DateOfBirth_DateKey (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Dim_DateOfBirth_DateKey]&apos; value=&apos;[sqlproxy].[Dim_DateOfBirth_DateKey]&apos; /&gt;&#10;      &lt;map key=&apos;[Dim_DateOfDeath_DateKey (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Dim_DateOfDeath_DateKey (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Dim_DateOfDeath_DateKey]&apos; value=&apos;[sqlproxy].[Dim_DateOfDeath_DateKey]&apos; /&gt;&#10;      &lt;map key=&apos;[Dim_Estimated_DateOfBirth_DateKey (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Dim_Estimated_DateOfBirth_DateKey (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Dim_Estimated_DateOfBirth_DateKey]&apos; value=&apos;[sqlproxy].[Dim_Estimated_DateOfBirth_DateKey]&apos; /&gt;&#10;      &lt;map key=&apos;[Dim_Estimated_DateOfDelivery_DateKey (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Dim_Estimated_DateOfDelivery_DateKey (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Dim_Estimated_DateOfDelivery_DateKey]&apos; value=&apos;[sqlproxy].[Dim_Estimated_DateOfDelivery_DateKey]&apos; /&gt;&#10;      &lt;map key=&apos;[Dim_Subject_PersonKey]&apos; value=&apos;[sqlproxy].[Dim_Subject_PersonKey]&apos; /&gt;&#10;      &lt;map key=&apos;[EstimatedDateOfBirth_DateTime (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[EstimatedDateOfBirth_DateTime (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[EstimatedDateOfBirth_DateTime]&apos; value=&apos;[sqlproxy].[EstimatedDateOfBirth_DateTime]&apos; /&gt;&#10;      &lt;map key=&apos;[EstimatedDateOfDelivery_DateTime (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[EstimatedDateOfDelivery_DateTime (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[EstimatedDateOfDelivery_DateTime]&apos; value=&apos;[sqlproxy].[EstimatedDateOfDelivery_DateTime]&apos; /&gt;&#10;      &lt;map key=&apos;[Ethnicity_SubType (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Ethnicity_SubType (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Ethnicity_SubType]&apos; value=&apos;[sqlproxy].[Ethnicity_SubType]&apos; /&gt;&#10;      &lt;map key=&apos;[Ethnicity_Type (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Ethnicity_Type (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Ethnicity_Type]&apos; value=&apos;[sqlproxy].[Ethnicity_Type]&apos; /&gt;&#10;      &lt;map key=&apos;[Gender (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Gender (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Gender]&apos; value=&apos;[sqlproxy].[Gender]&apos; /&gt;&#10;      &lt;map key=&apos;[Id (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Id (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Id (Custom SQL Query1)]&apos; value=&apos;[sqlproxy].[Id (Custom SQL Query1)]&apos; /&gt;&#10;      &lt;map key=&apos;[Id (DimPerson)]&apos; value=&apos;[sqlproxy].[Id (DimPerson)]&apos; /&gt;&#10;      &lt;map key=&apos;[Id (DimTeam1)]&apos; value=&apos;[sqlproxy].[Id (DimTeam1)]&apos; /&gt;&#10;      &lt;map key=&apos;[Id]&apos; value=&apos;[sqlproxy].[Id]&apos; /&gt;&#10;      &lt;map key=&apos;[Immirgration_Status (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Immirgration_Status (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Immirgration_Status]&apos; value=&apos;[sqlproxy].[Immirgration_Status]&apos; /&gt;&#10;      &lt;map key=&apos;[Item_Type]&apos; value=&apos;[sqlproxy].[Item_Type]&apos; /&gt;&#10;      &lt;map key=&apos;[Language (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Language (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Language]&apos; value=&apos;[sqlproxy].[Language]&apos; /&gt;&#10;      &lt;map key=&apos;[MaritalStatus (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[MaritalStatus (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[MaritalStatus]&apos; value=&apos;[sqlproxy].[MaritalStatus]&apos; /&gt;&#10;      &lt;map key=&apos;[Name (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Name (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Name (DimPerson)]&apos; value=&apos;[sqlproxy].[Name (DimPerson)]&apos; /&gt;&#10;      &lt;map key=&apos;[Name (DimTeam1)]&apos; value=&apos;[sqlproxy].[Name (DimTeam1)]&apos; /&gt;&#10;      &lt;map key=&apos;[Name]&apos; value=&apos;[sqlproxy].[Name]&apos; /&gt;&#10;      &lt;map key=&apos;[Nationality (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Nationality (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Nationality]&apos; value=&apos;[sqlproxy].[Nationality]&apos; /&gt;&#10;      &lt;map key=&apos;[Number of Records]&apos; value=&apos;[sqlproxy].[Number of Records]&apos; /&gt;&#10;      &lt;map key=&apos;[Occupation (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Occupation (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Occupation]&apos; value=&apos;[sqlproxy].[Occupation]&apos; /&gt;&#10;      &lt;map key=&apos;[Person_Type (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Person_Type (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Person_Type]&apos; value=&apos;[sqlproxy].[Person_Type]&apos; /&gt;&#10;      &lt;map key=&apos;[Religion (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Religion (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Religion]&apos; value=&apos;[sqlproxy].[Religion]&apos; /&gt;&#10;      &lt;map key=&apos;[Residency (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Residency (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Residency]&apos; value=&apos;[sqlproxy].[Residency]&apos; /&gt;&#10;      &lt;map key=&apos;[Reviewonorafterdate]&apos; value=&apos;[sqlproxy].[Reviewonorafterdate]&apos; /&gt;&#10;      &lt;map key=&apos;[SexualOrientation (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[SexualOrientation (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[SexualOrientation]&apos; value=&apos;[sqlproxy].[SexualOrientation]&apos; /&gt;&#10;      &lt;map key=&apos;[Source_Timestamp (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Source_Timestamp (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Source_Timestamp (DimPerson)]&apos; value=&apos;[sqlproxy].[Source_Timestamp (DimPerson)]&apos; /&gt;&#10;      &lt;map key=&apos;[Source_Timestamp (DimTeam1)]&apos; value=&apos;[sqlproxy].[Source_Timestamp (DimTeam1)]&apos; /&gt;&#10;      &lt;map key=&apos;[Source_Timestamp]&apos; value=&apos;[sqlproxy].[Source_Timestamp]&apos; /&gt;&#10;      &lt;map key=&apos;[Status]&apos; value=&apos;[sqlproxy].[Status]&apos; /&gt;&#10;      &lt;map key=&apos;[SubjectId]&apos; value=&apos;[sqlproxy].[SubjectId]&apos; /&gt;&#10;      &lt;map key=&apos;[Title (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[Title (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[Title (DimPerson)]&apos; value=&apos;[sqlproxy].[Title (DimPerson)]&apos; /&gt;&#10;      &lt;map key=&apos;[Title]&apos; value=&apos;[sqlproxy].[Title]&apos; /&gt;&#10;      &lt;map key=&apos;[Type (DimTeam1)]&apos; value=&apos;[sqlproxy].[Type (DimTeam1)]&apos; /&gt;&#10;      &lt;map key=&apos;[Type]&apos; value=&apos;[sqlproxy].[Type]&apos; /&gt;&#10;      &lt;map key=&apos;[WarningId]&apos; value=&apos;[sqlproxy].[WarningId]&apos; /&gt;&#10;      &lt;map key=&apos;[WarningType]&apos; value=&apos;[sqlproxy].[WarningType]&apos; /&gt;&#10;      &lt;map key=&apos;[contact_type (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[contact_type (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[contact_type]&apos; value=&apos;[sqlproxy].[contact_type]&apos; /&gt;&#10;      &lt;map key=&apos;[contact_usage (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[contact_usage (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[contact_usage]&apos; value=&apos;[sqlproxy].[contact_usage]&apos; /&gt;&#10;      &lt;map key=&apos;[contact_value (Custom SQL Query)]&apos; value=&apos;[sqlproxy].[contact_value (Custom SQL Query)]&apos; /&gt;&#10;      &lt;map key=&apos;[contact_value]&apos; value=&apos;[sqlproxy].[contact_value]&apos; /&gt;&#10;      &lt;map key=&apos;[dim_owner_teamkey]&apos; value=&apos;[sqlproxy].[dim_owner_teamkey]&apos; /&gt;&#10;      &lt;map key=&apos;[teamId]&apos; value=&apos;[sqlproxy].[teamId]&apos; /&gt;&#10;    &lt;/cols&gt;&#10;  &lt;/connection&gt;&#10;  &lt;aliases enabled=&apos;yes&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Age (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Age]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Audit_Create_Timestamp (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;Audit Create Timestamp (DimPerson)&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Audit_Create_Timestamp (DimPerson)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;Audit Create Timestamp (DimTeam1)&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; name=&apos;[Audit_Create_Timestamp (DimTeam1)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;Audit Create Timestamp&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Audit_Create_Timestamp]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Audit_Update_Timestamp (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;Audit Update Timestamp (DimPerson)&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Audit_Update_Timestamp (DimPerson)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;Audit Update Timestamp (DimTeam1)&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Audit_Update_Timestamp (DimTeam1)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;Audit Update Timestamp&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Audit_Update_Timestamp]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Author Id&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; name=&apos;[AuthorId]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Client Aware Flag&apos; datatype=&apos;boolean&apos; default-type=&apos;nominal&apos; name=&apos;[ClientAwareFlag]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;boolean&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;Created On&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; name=&apos;[CreatedOn]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[DateOfBirth_DateTime (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;DateOfBirth DateTime&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[DateOfBirth_DateTime]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[DateOfDeath_DateTime (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;DateOfDeath DateTime&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[DateOfDeath_DateTime]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Sum&apos; caption=&apos;DimPersonKey◙&apos; datatype=&apos;integer&apos; default-type=&apos;quantitative&apos; hidden=&apos;true&apos; name=&apos;[DimPersonKey (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;measure&apos; type=&apos;quantitative&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Dim Person Key&apos; datatype=&apos;integer&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[DimPersonKey]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;integer&apos; default-type=&apos;ordinal&apos; name=&apos;[DimTeamKey (DimTeam1)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Dim Team Key&apos; datatype=&apos;integer&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[DimTeamKey]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Dim Warning Key&apos; datatype=&apos;integer&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[DimWarningKey]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Sum&apos; datatype=&apos;integer&apos; default-type=&apos;quantitative&apos; hidden=&apos;true&apos; name=&apos;[Dim_DateOfBirth_DateKey (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;measure&apos; type=&apos;quantitative&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Dim DateOfBirth DateKey&apos; datatype=&apos;integer&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Dim_DateOfBirth_DateKey]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Sum&apos; datatype=&apos;integer&apos; default-type=&apos;quantitative&apos; hidden=&apos;true&apos; name=&apos;[Dim_DateOfDeath_DateKey (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;measure&apos; type=&apos;quantitative&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Dim DateOfDeath DateKey&apos; datatype=&apos;integer&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Dim_DateOfDeath_DateKey]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Sum&apos; datatype=&apos;integer&apos; default-type=&apos;quantitative&apos; hidden=&apos;true&apos; name=&apos;[Dim_Estimated_DateOfBirth_DateKey (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;measure&apos; type=&apos;quantitative&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Dim Estimated DateOfBirth DateKey&apos; datatype=&apos;integer&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Dim_Estimated_DateOfBirth_DateKey]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Sum&apos; datatype=&apos;integer&apos; default-type=&apos;quantitative&apos; hidden=&apos;true&apos; name=&apos;[Dim_Estimated_DateOfDelivery_DateKey (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;measure&apos; type=&apos;quantitative&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Dim Estimated DateOfDelivery DateKey&apos; datatype=&apos;integer&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Dim_Estimated_DateOfDelivery_DateKey]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Dim Subject PersonKey&apos; datatype=&apos;integer&apos; default-type=&apos;ordinal&apos; name=&apos;[Dim_Subject_PersonKey]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[EstimatedDateOfBirth_DateTime (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;EstimatedDateOfBirth DateTime&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[EstimatedDateOfBirth_DateTime]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[EstimatedDateOfDelivery_DateTime (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;EstimatedDateOfDelivery DateTime&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[EstimatedDateOfDelivery_DateTime]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Ethnicity_SubType (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Ethnicity SubType&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Ethnicity_SubType]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Ethnicity_Type (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Ethnicity Type&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Ethnicity_Type]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Gender (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Gender]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Id (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Id (Custom SQL Query1)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Id (DimPerson)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Id]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Immirgration_Status (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Immirgration Status&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Immirgration_Status]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Item_Type]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Language (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Language]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[MaritalStatus (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Marital Status&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[MaritalStatus]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;AuthorName &apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; name=&apos;[Name (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;SubjectName&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; name=&apos;[Name (DimPerson)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;SubjectTeamName&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; name=&apos;[Name (DimTeam1)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;AuthorTeamName&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; name=&apos;[Name]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Nationality (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Nationality]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Sum&apos; datatype=&apos;integer&apos; default-type=&apos;quantitative&apos; name=&apos;[Number of Records]&apos; pivot=&apos;key&apos; role=&apos;measure&apos; type=&apos;quantitative&apos; user-datatype=&apos;integer&apos; user:auto-column=&apos;numrec&apos; visual-totals=&apos;Default&apos;&gt;&#10;    &lt;calculation class=&apos;tableau&apos; formula=&apos;1&apos; /&gt;&#10;  &lt;/column&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Occupation (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Occupation]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Person_Type (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Person Type&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Person_Type]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Religion (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Religion]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Residency (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Residency]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[SexualOrientation (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Sexual Orientation&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[SexualOrientation]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Source_Timestamp (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;Source Timestamp (DimPerson)&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Source_Timestamp (DimPerson)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;Source Timestamp (DimTeam1)&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Source_Timestamp (DimTeam1)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Year&apos; caption=&apos;Source Timestamp&apos; datatype=&apos;datetime&apos; default-type=&apos;ordinal&apos; hidden=&apos;true&apos; name=&apos;[Source_Timestamp]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;ordinal&apos; user-datatype=&apos;datetime&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Subject Id&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; name=&apos;[SubjectId]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Title (DimPerson)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Type (DimTeam1)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[Type]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Warning Id&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; name=&apos;[WarningId]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Warning Type&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; name=&apos;[WarningType]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[contact_type (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Contact Type&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[contact_type]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[contact_usage (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Contact Usage&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[contact_usage]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[contact_value (Custom SQL Query)]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Contact Value&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; hidden=&apos;true&apos; name=&apos;[contact_value]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Sum&apos; datatype=&apos;integer&apos; default-type=&apos;quantitative&apos; hidden=&apos;true&apos; name=&apos;[dim_owner_teamkey]&apos; pivot=&apos;key&apos; role=&apos;measure&apos; type=&apos;quantitative&apos; user-datatype=&apos;integer&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;column aggregation=&apos;Count&apos; caption=&apos;Team Id&apos; datatype=&apos;string&apos; default-type=&apos;nominal&apos; name=&apos;[teamId]&apos; pivot=&apos;key&apos; role=&apos;dimension&apos; type=&apos;nominal&apos; user-datatype=&apos;string&apos; visual-totals=&apos;Default&apos; /&gt;&#10;  &lt;layout dim-ordering=&apos;alphabetic&apos; dim-percentage=&apos;0.846348&apos; measure-ordering=&apos;alphabetic&apos; measure-percentage=&apos;0.153652&apos; rowDisplayCount=&apos;100&apos; show-structure=&apos;true&apos; /&gt;&#10;  &lt;semantic-values&gt;&#10;    &lt;semantic-value key=&apos;[Country].[Name]&apos; value=&apos;&amp;quot;United States&amp;quot;&apos; /&gt;&#10;  &lt;/semantic-values&gt;&#10;&lt;/datasource&gt;&#10;&quot;</attribute>
+              <attribute datatype='boolean' name='extract-active'>false</attribute>
+              <attribute datatype='boolean' name='fast-get-server-time'>true</attribute>
+              <attribute datatype='string' name='version'>&quot;10.0.0&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <overridable-settings>
+        <date-options fiscal-year-start='january' start-of-week='sunday' />
+        <default-date-format />
+      </overridable-settings>
+      <aliases enabled='yes' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Age (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Age]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Year' datatype='datetime' default-type='ordinal' layered='true' name='[Audit_Create_Timestamp (Custom SQL Query)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='Audit Create Timestamp (DimPerson)' datatype='datetime' default-type='ordinal' layered='true' name='[Audit_Create_Timestamp (DimPerson)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='Audit Create Timestamp (DimTeam1)' datatype='datetime' default-type='ordinal' layered='true' name='[Audit_Create_Timestamp (DimTeam1)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='Audit Create Timestamp' datatype='datetime' default-type='ordinal' layered='true' name='[Audit_Create_Timestamp]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' datatype='datetime' default-type='ordinal' layered='true' name='[Audit_Update_Timestamp (Custom SQL Query)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='Audit Update Timestamp (DimPerson)' datatype='datetime' default-type='ordinal' layered='true' name='[Audit_Update_Timestamp (DimPerson)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='Audit Update Timestamp (DimTeam1)' datatype='datetime' default-type='ordinal' layered='true' name='[Audit_Update_Timestamp (DimTeam1)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='Audit Update Timestamp' datatype='datetime' default-type='ordinal' layered='true' name='[Audit_Update_Timestamp]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Count' caption='Author Id' datatype='string' default-type='nominal' layered='true' name='[AuthorId]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Client Aware Flag' datatype='boolean' default-type='nominal' layered='true' name='[ClientAwareFlag]' pivot='key' role='dimension' type='nominal' user-datatype='boolean' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Comments]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Year' caption='Created On' datatype='datetime' default-type='ordinal' layered='true' name='[CreatedOn]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' datatype='datetime' default-type='ordinal' layered='true' name='[DateOfBirth_DateTime (Custom SQL Query)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='DateOfBirth DateTime' datatype='datetime' default-type='ordinal' layered='true' name='[DateOfBirth_DateTime]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' datatype='datetime' default-type='ordinal' layered='true' name='[DateOfDeath_DateTime (Custom SQL Query)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='DateOfDeath DateTime' datatype='datetime' default-type='ordinal' layered='true' name='[DateOfDeath_DateTime]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Sum' caption='DimPersonKey◙' datatype='integer' default-type='quantitative' layered='true' name='[DimPersonKey (Custom SQL Query)]' pivot='key' role='measure' type='quantitative' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Count' caption='Dim Person Key' datatype='integer' default-type='ordinal' layered='true' name='[DimPersonKey]' pivot='key' role='dimension' type='ordinal' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Count' datatype='integer' default-type='ordinal' layered='true' name='[DimTeamKey (DimTeam1)]' pivot='key' role='dimension' type='ordinal' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Count' caption='Dim Team Key' datatype='integer' default-type='ordinal' layered='true' name='[DimTeamKey]' pivot='key' role='dimension' type='ordinal' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Count' caption='Dim Warning Key' datatype='integer' default-type='ordinal' layered='true' name='[DimWarningKey]' pivot='key' role='dimension' type='ordinal' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Sum' datatype='integer' default-type='quantitative' layered='true' name='[Dim_DateOfBirth_DateKey (Custom SQL Query)]' pivot='key' role='measure' type='quantitative' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Count' caption='Dim DateOfBirth DateKey' datatype='integer' default-type='ordinal' layered='true' name='[Dim_DateOfBirth_DateKey]' pivot='key' role='dimension' type='ordinal' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Sum' datatype='integer' default-type='quantitative' layered='true' name='[Dim_DateOfDeath_DateKey (Custom SQL Query)]' pivot='key' role='measure' type='quantitative' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Count' caption='Dim DateOfDeath DateKey' datatype='integer' default-type='ordinal' layered='true' name='[Dim_DateOfDeath_DateKey]' pivot='key' role='dimension' type='ordinal' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Sum' datatype='integer' default-type='quantitative' layered='true' name='[Dim_Estimated_DateOfBirth_DateKey (Custom SQL Query)]' pivot='key' role='measure' type='quantitative' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Count' caption='Dim Estimated DateOfBirth DateKey' datatype='integer' default-type='ordinal' layered='true' name='[Dim_Estimated_DateOfBirth_DateKey]' pivot='key' role='dimension' type='ordinal' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Sum' datatype='integer' default-type='quantitative' layered='true' name='[Dim_Estimated_DateOfDelivery_DateKey (Custom SQL Query)]' pivot='key' role='measure' type='quantitative' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Count' caption='Dim Estimated DateOfDelivery DateKey' datatype='integer' default-type='ordinal' layered='true' name='[Dim_Estimated_DateOfDelivery_DateKey]' pivot='key' role='dimension' type='ordinal' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Count' caption='Dim Subject PersonKey' datatype='integer' default-type='ordinal' layered='true' name='[Dim_Subject_PersonKey]' pivot='key' role='dimension' type='ordinal' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Year' datatype='datetime' default-type='ordinal' layered='true' name='[EstimatedDateOfBirth_DateTime (Custom SQL Query)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='EstimatedDateOfBirth DateTime' datatype='datetime' default-type='ordinal' layered='true' name='[EstimatedDateOfBirth_DateTime]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' datatype='datetime' default-type='ordinal' layered='true' name='[EstimatedDateOfDelivery_DateTime (Custom SQL Query)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='EstimatedDateOfDelivery DateTime' datatype='datetime' default-type='ordinal' layered='true' name='[EstimatedDateOfDelivery_DateTime]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Ethnicity_SubType (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Ethnicity SubType' datatype='string' default-type='nominal' layered='true' name='[Ethnicity_SubType]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Ethnicity_Type (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Ethnicity Type' datatype='string' default-type='nominal' layered='true' name='[Ethnicity_Type]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Gender (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Gender]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Id (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Id (Custom SQL Query1)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Id (DimPerson)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Id (DimTeam1)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Id]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Immirgration_Status (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Immirgration Status' datatype='string' default-type='nominal' layered='true' name='[Immirgration_Status]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Item_Type]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Language (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Language]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[MaritalStatus (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Marital Status' datatype='string' default-type='nominal' layered='true' name='[MaritalStatus]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='AuthorName ' datatype='string' default-type='nominal' layered='true' name='[Name (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='SubjectName' datatype='string' default-type='nominal' layered='true' name='[Name (DimPerson)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='SubjectTeamName' datatype='string' default-type='nominal' layered='true' name='[Name (DimTeam1)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='AuthorTeamName' datatype='string' default-type='nominal' layered='true' name='[Name]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Nationality (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Nationality]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Sum' datatype='integer' default-type='quantitative' layered='true' name='[Number of Records]' pivot='key' role='measure' type='quantitative' user-datatype='integer' user:auto-column='numrec' visual-totals='Default'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Occupation (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Occupation]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Person_Type (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Person Type' datatype='string' default-type='nominal' layered='true' name='[Person_Type]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Religion (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Religion]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Residency (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Residency]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Year' datatype='datetime' default-type='ordinal' layered='true' name='[Reviewonorafterdate]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[SexualOrientation (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Sexual Orientation' datatype='string' default-type='nominal' layered='true' name='[SexualOrientation]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Year' datatype='datetime' default-type='ordinal' layered='true' name='[Source_Timestamp (Custom SQL Query)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='Source Timestamp (DimPerson)' datatype='datetime' default-type='ordinal' layered='true' name='[Source_Timestamp (DimPerson)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='Source Timestamp (DimTeam1)' datatype='datetime' default-type='ordinal' layered='true' name='[Source_Timestamp (DimTeam1)]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Year' caption='Source Timestamp' datatype='datetime' default-type='ordinal' layered='true' name='[Source_Timestamp]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Status]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Subject Id' datatype='string' default-type='nominal' layered='true' name='[SubjectId]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Title (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Title (DimPerson)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Title]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Type (DimTeam1)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[Type]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Warning Id' datatype='string' default-type='nominal' layered='true' name='[WarningId]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Warning Type' datatype='string' default-type='nominal' layered='true' name='[WarningType]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[contact_type (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Contact Type' datatype='string' default-type='nominal' layered='true' name='[contact_type]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[contact_usage (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Contact Usage' datatype='string' default-type='nominal' layered='true' name='[contact_usage]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' datatype='string' default-type='nominal' layered='true' name='[contact_value (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Contact Value' datatype='string' default-type='nominal' layered='true' name='[contact_value]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Sum' datatype='integer' default-type='quantitative' layered='true' name='[dim_owner_teamkey]' pivot='key' role='measure' type='quantitative' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Count' caption='Team Id' datatype='string' default-type='nominal' layered='true' name='[teamId]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.81738' measure-ordering='alphabetic' measure-percentage='0.18262' rowDisplayCount='100' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <repository-location id='Sheet1' path='/workbooks/Warning' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Warning' name='sqlproxy.0okfjkc178dlir1c89qgu08zoud6' />
+          </datasources>
+          <datasource-dependencies datasource='sqlproxy.0okfjkc178dlir1c89qgu08zoud6'>
+            <column aggregation='Year' caption='Created On' datatype='datetime' default-type='ordinal' layered='true' name='[CreatedOn]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+            <column aggregation='Count' caption='AuthorName ' datatype='string' default-type='nominal' layered='true' name='[Name (Custom SQL Query)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+            <column aggregation='Count' caption='SubjectName' datatype='string' default-type='nominal' layered='true' name='[Name (DimPerson)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+            <column aggregation='Count' caption='SubjectTeamName' datatype='string' default-type='nominal' layered='true' name='[Name (DimTeam1)]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+            <column aggregation='Count' caption='AuthorTeamName' datatype='string' default-type='nominal' layered='true' name='[Name]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+            <column-instance column='[CreatedOn]' derivation='None' name='[none:CreatedOn:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Name (Custom SQL Query)]' derivation='None' name='[none:Name (Custom SQL Query):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Name (DimPerson)]' derivation='None' name='[none:Name (DimPerson):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Name (DimTeam1)]' derivation='None' name='[none:Name (DimTeam1):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Name]' derivation='None' name='[none:Name:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:Name (DimPerson):nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Name (DimPerson):nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:Name (DimPerson):nk]' member='%null%' />
+                <groupfilter function='member' level='[none:Name (DimPerson):nk]' member='&quot;&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:Name (DimPerson):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:Name (DimPerson):nk] / ([sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:Name (DimTeam1):nk] / ([sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:CreatedOn:ok] / ([sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:Name (Custom SQL Query):nk] / [sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:Name:nk]))))</rows>
+        <cols />
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <fields>
+                  <field>[sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:Name (DimPerson):nk]</field>
+                </fields>
+                <multibucket>
+                  <bucket>&quot;&quot;</bucket>
+                </multibucket>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:Name (Custom SQL Query):nk]</field>
+            <field>[sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:Name (DimPerson):nk]</field>
+            <field>[sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:Name (DimTeam1):nk]</field>
+            <field>[sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[none:Name:nk]</field>
+            <field>[sqlproxy.0okfjkc178dlir1c89qgu08zoud6].[yr:CreatedOn:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+</workbook>

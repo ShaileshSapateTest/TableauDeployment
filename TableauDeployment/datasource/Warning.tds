@@ -1,0 +1,1893 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- build 10200.17.0223.1918                               -->
+<datasource formatted-name="Warning" inline="true" source-platform="win" version="10.2" xml:base="http://dev-du1-report1.uknorth.cloudapp.azure.com" xmlns:user="http://www.tableausoftware.com/xml/user">
+  <repository-location derived-from="/datasources/Warning?rev=1.8" id="Warning" path="/datasources" revision="1.9" />
+  <connection class="federated">
+    <named-connections>
+      <named-connection caption="Warning" name="sqlserver.0ghfg5c18czw051eqb8s41upw6o9">
+        <connection authentication="sqlserver" class="sqlserver" dbname="osc-dwh" odbc-native-protocol="yes" one-time-sql="" server="dev-du2-report1" server-oauth="" username="osc-admin" workgroup-auth-mode="prompt" />
+      </named-connection>
+    </named-connections>
+    <relation join="left" type="join">
+      <clause type="join">
+        <expression op="=">
+          <expression op="[Sumrefrralworkflow].[dim_owner_teamkey]" />
+          <expression op="[SubjectTeam].[DimTeamKey]" />
+        </expression>
+      </clause>
+      <relation join="left" type="join">
+        <clause type="join">
+          <expression op="=">
+            <expression op="[Warning].[teamId]" />
+            <expression op="[Team].[Id]" />
+          </expression>
+        </clause>
+        <relation join="left" type="join">
+          <clause type="join">
+            <expression op="=">
+              <expression op="[Warning].[SubjectId]" />
+              <expression op="[Sumrefrralworkflow].[Id]" />
+            </expression>
+          </clause>
+          <relation join="left" type="join">
+            <clause type="join">
+              <expression op="=">
+                <expression op="[Warning].[AuthorId]" />
+                <expression op="[Author].[Id]" />
+              </expression>
+            </clause>
+            <relation join="left" type="join">
+              <clause type="join">
+                <expression op="=">
+                  <expression op="[Warning].[Dim_Subject_PersonKey]" />
+                  <expression op="[Person].[DimPersonKey]" />
+                </expression>
+              </clause>
+              <relation connection="sqlserver.0ghfg5c18czw051eqb8s41upw6o9" name="Warning" table="[dbo].[DimWarning]" type="table" />
+              <relation connection="sqlserver.0ghfg5c18czw051eqb8s41upw6o9" name="Person" table="[dbo].[DimPerson]" type="table" />
+            </relation>
+            <relation connection="sqlserver.0ghfg5c18czw051eqb8s41upw6o9" name="Author" type="text">select * from dwh.DimPerson dp1 where dp1.Person_Type in ('Social Worker','Owner','Team Member') and  dp1.name &lt;&lt;&gt;&gt; '' and dp1.name is  not null</relation>
+          </relation>
+          <relation connection="sqlserver.0ghfg5c18czw051eqb8s41upw6o9" name="Sumrefrralworkflow" type="text">select distinct dim_owner_teamkey,dp.Id,
+ case when Item_Type = 'case' then 'case' else 'person' end Item_Type from dwh.sumreferralworkflow sf 
+	  inner join dwh.dimperson dp on dp.dimpersonkey=sf.dim_subject_personkey
+where item_type &lt;&lt;&gt;&gt; 'step'</relation>
+        </relation>
+        <relation connection="sqlserver.0ghfg5c18czw051eqb8s41upw6o9" name="Team" table="[dbo].[DimTeam]" type="table" />
+      </relation>
+      <relation connection="sqlserver.0ghfg5c18czw051eqb8s41upw6o9" name="SubjectTeam" table="[dbo].[DimTeam]" type="table" />
+    </relation>
+    <cols>
+      <map key="[Age (Custom SQL Query)]" value="[Author].[Age]" />
+      <map key="[Age]" value="[Person].[Age]" />
+      <map key="[Audit_Create_Timestamp (Custom SQL Query)]" value="[Author].[Audit_Create_Timestamp]" />
+      <map key="[Audit_Create_Timestamp (DimPerson)]" value="[Person].[Audit_Create_Timestamp]" />
+      <map key="[Audit_Create_Timestamp (DimTeam1)]" value="[SubjectTeam].[Audit_Create_Timestamp]" />
+      <map key="[Audit_Create_Timestamp]" value="[Team].[Audit_Create_Timestamp]" />
+      <map key="[Audit_Update_Timestamp (Custom SQL Query)]" value="[Author].[Audit_Update_Timestamp]" />
+      <map key="[Audit_Update_Timestamp (DimPerson)]" value="[Person].[Audit_Update_Timestamp]" />
+      <map key="[Audit_Update_Timestamp (DimTeam1)]" value="[SubjectTeam].[Audit_Update_Timestamp]" />
+      <map key="[Audit_Update_Timestamp]" value="[Team].[Audit_Update_Timestamp]" />
+      <map key="[AuthorId]" value="[Warning].[AuthorId]" />
+      <map key="[ClientAwareFlag]" value="[Warning].[ClientAwareFlag]" />
+      <map key="[Comments]" value="[Warning].[Comments]" />
+      <map key="[CreatedOn]" value="[Warning].[CreatedOn]" />
+      <map key="[DateOfBirth_DateTime (Custom SQL Query)]" value="[Author].[DateOfBirth_DateTime]" />
+      <map key="[DateOfBirth_DateTime]" value="[Person].[DateOfBirth_DateTime]" />
+      <map key="[DateOfDeath_DateTime (Custom SQL Query)]" value="[Author].[DateOfDeath_DateTime]" />
+      <map key="[DateOfDeath_DateTime]" value="[Person].[DateOfDeath_DateTime]" />
+      <map key="[DimPersonKey (Custom SQL Query)]" value="[Author].[DimPersonKey]" />
+      <map key="[DimPersonKey]" value="[Person].[DimPersonKey]" />
+      <map key="[DimTeamKey (DimTeam1)]" value="[SubjectTeam].[DimTeamKey]" />
+      <map key="[DimTeamKey]" value="[Team].[DimTeamKey]" />
+      <map key="[DimWarningKey]" value="[Warning].[DimWarningKey]" />
+      <map key="[Dim_DateOfBirth_DateKey (Custom SQL Query)]" value="[Author].[Dim_DateOfBirth_DateKey]" />
+      <map key="[Dim_DateOfBirth_DateKey]" value="[Person].[Dim_DateOfBirth_DateKey]" />
+      <map key="[Dim_DateOfDeath_DateKey (Custom SQL Query)]" value="[Author].[Dim_DateOfDeath_DateKey]" />
+      <map key="[Dim_DateOfDeath_DateKey]" value="[Person].[Dim_DateOfDeath_DateKey]" />
+      <map key="[Dim_Estimated_DateOfBirth_DateKey (Custom SQL Query)]" value="[Author].[Dim_Estimated_DateOfBirth_DateKey]" />
+      <map key="[Dim_Estimated_DateOfBirth_DateKey]" value="[Person].[Dim_Estimated_DateOfBirth_DateKey]" />
+      <map key="[Dim_Estimated_DateOfDelivery_DateKey (Custom SQL Query)]" value="[Author].[Dim_Estimated_DateOfDelivery_DateKey]" />
+      <map key="[Dim_Estimated_DateOfDelivery_DateKey]" value="[Person].[Dim_Estimated_DateOfDelivery_DateKey]" />
+      <map key="[Dim_Subject_PersonKey]" value="[Warning].[Dim_Subject_PersonKey]" />
+      <map key="[EstimatedDateOfBirth_DateTime (Custom SQL Query)]" value="[Author].[EstimatedDateOfBirth_DateTime]" />
+      <map key="[EstimatedDateOfBirth_DateTime]" value="[Person].[EstimatedDateOfBirth_DateTime]" />
+      <map key="[EstimatedDateOfDelivery_DateTime (Custom SQL Query)]" value="[Author].[EstimatedDateOfDelivery_DateTime]" />
+      <map key="[EstimatedDateOfDelivery_DateTime]" value="[Person].[EstimatedDateOfDelivery_DateTime]" />
+      <map key="[Ethnicity_SubType (Custom SQL Query)]" value="[Author].[Ethnicity_SubType]" />
+      <map key="[Ethnicity_SubType]" value="[Person].[Ethnicity_SubType]" />
+      <map key="[Ethnicity_Type (Custom SQL Query)]" value="[Author].[Ethnicity_Type]" />
+      <map key="[Ethnicity_Type]" value="[Person].[Ethnicity_Type]" />
+      <map key="[Gender (Custom SQL Query)]" value="[Author].[Gender]" />
+      <map key="[Gender]" value="[Person].[Gender]" />
+      <map key="[Id (Custom SQL Query)]" value="[Author].[Id]" />
+      <map key="[Id (Custom SQL Query1)]" value="[Sumrefrralworkflow].[Id]" />
+      <map key="[Id (DimPerson)]" value="[Person].[Id]" />
+      <map key="[Id (DimTeam1)]" value="[SubjectTeam].[Id]" />
+      <map key="[Id]" value="[Team].[Id]" />
+      <map key="[Immirgration_Status (Custom SQL Query)]" value="[Author].[Immirgration_Status]" />
+      <map key="[Immirgration_Status]" value="[Person].[Immirgration_Status]" />
+      <map key="[Item_Type]" value="[Sumrefrralworkflow].[Item_Type]" />
+      <map key="[Language (Custom SQL Query)]" value="[Author].[Language]" />
+      <map key="[Language]" value="[Person].[Language]" />
+      <map key="[MaritalStatus (Custom SQL Query)]" value="[Author].[MaritalStatus]" />
+      <map key="[MaritalStatus]" value="[Person].[MaritalStatus]" />
+      <map key="[Name (Custom SQL Query)]" value="[Author].[Name]" />
+      <map key="[Name (DimPerson)]" value="[Person].[Name]" />
+      <map key="[Name (DimTeam1)]" value="[SubjectTeam].[Name]" />
+      <map key="[Name]" value="[Team].[Name]" />
+      <map key="[Nationality (Custom SQL Query)]" value="[Author].[Nationality]" />
+      <map key="[Nationality]" value="[Person].[Nationality]" />
+      <map key="[Occupation (Custom SQL Query)]" value="[Author].[Occupation]" />
+      <map key="[Occupation]" value="[Person].[Occupation]" />
+      <map key="[Person_Type (Custom SQL Query)]" value="[Author].[Person_Type]" />
+      <map key="[Person_Type]" value="[Person].[Person_Type]" />
+      <map key="[Religion (Custom SQL Query)]" value="[Author].[Religion]" />
+      <map key="[Religion]" value="[Person].[Religion]" />
+      <map key="[Residency (Custom SQL Query)]" value="[Author].[Residency]" />
+      <map key="[Residency]" value="[Person].[Residency]" />
+      <map key="[Reviewonorafterdate]" value="[Warning].[Reviewonorafterdate]" />
+      <map key="[SexualOrientation (Custom SQL Query)]" value="[Author].[SexualOrientation]" />
+      <map key="[SexualOrientation]" value="[Person].[SexualOrientation]" />
+      <map key="[Source_Timestamp (Custom SQL Query)]" value="[Author].[Source_Timestamp]" />
+      <map key="[Source_Timestamp (DimPerson)]" value="[Person].[Source_Timestamp]" />
+      <map key="[Source_Timestamp (DimTeam1)]" value="[SubjectTeam].[Source_Timestamp]" />
+      <map key="[Source_Timestamp]" value="[Team].[Source_Timestamp]" />
+      <map key="[Status]" value="[Warning].[Status]" />
+      <map key="[SubjectId]" value="[Warning].[SubjectId]" />
+      <map key="[Title (Custom SQL Query)]" value="[Author].[Title]" />
+      <map key="[Title (DimPerson)]" value="[Person].[Title]" />
+      <map key="[Title]" value="[Warning].[Title]" />
+      <map key="[Type (DimTeam1)]" value="[SubjectTeam].[Type]" />
+      <map key="[Type]" value="[Team].[Type]" />
+      <map key="[WarningId]" value="[Warning].[WarningId]" />
+      <map key="[WarningType]" value="[Warning].[WarningType]" />
+      <map key="[contact_type (Custom SQL Query)]" value="[Author].[contact_type]" />
+      <map key="[contact_type]" value="[Person].[contact_type]" />
+      <map key="[contact_usage (Custom SQL Query)]" value="[Author].[contact_usage]" />
+      <map key="[contact_usage]" value="[Person].[contact_usage]" />
+      <map key="[contact_value (Custom SQL Query)]" value="[Author].[contact_value]" />
+      <map key="[contact_value]" value="[Person].[contact_value]" />
+      <map key="[dim_owner_teamkey]" value="[Sumrefrralworkflow].[dim_owner_teamkey]" />
+      <map key="[teamId]" value="[Warning].[teamId]" />
+    </cols>
+    <metadata-records>
+      <metadata-record class="column">
+        <remote-name>DimWarningKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[DimWarningKey]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>DimWarningKey</remote-alias>
+        <ordinal>1</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>false</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>WarningId</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[WarningId]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>WarningId</remote-alias>
+        <ordinal>2</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>SubjectId</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[SubjectId]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>SubjectId</remote-alias>
+        <ordinal>3</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>AuthorId</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[AuthorId]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>AuthorId</remote-alias>
+        <ordinal>4</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>CreatedOn</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[CreatedOn]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>CreatedOn</remote-alias>
+        <ordinal>5</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>WarningType</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[WarningType]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>WarningType</remote-alias>
+        <ordinal>6</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>500</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Title</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Title]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>Title</remote-alias>
+        <ordinal>7</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>1000</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Status</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Status]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>Status</remote-alias>
+        <ordinal>8</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>ClientAwareFlag</remote-name>
+        <remote-type>11</remote-type>
+        <local-name>[ClientAwareFlag]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>ClientAwareFlag</remote-alias>
+        <ordinal>9</ordinal>
+        <local-type>boolean</local-type>
+        <aggregation>Count</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_BIT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Reviewonorafterdate</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Reviewonorafterdate]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>Reviewonorafterdate</remote-alias>
+        <ordinal>10</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Comments</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Comments]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>Comments</remote-alias>
+        <ordinal>11</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Dim_Subject_PersonKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[Dim_Subject_PersonKey]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>Dim_Subject_PersonKey</remote-alias>
+        <ordinal>12</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>teamId</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[teamId]</local-name>
+        <parent-name>[Warning]</parent-name>
+        <remote-alias>teamId</remote-alias>
+        <ordinal>13</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>DimPersonKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[DimPersonKey]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>DimPersonKey</remote-alias>
+        <ordinal>15</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Id</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Id (DimPerson)]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Id</remote-alias>
+        <ordinal>16</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Title</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Title (DimPerson)]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Title</remote-alias>
+        <ordinal>17</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Name</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Name (DimPerson)]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Name</remote-alias>
+        <ordinal>18</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Gender</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Gender]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Gender</remote-alias>
+        <ordinal>19</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>SexualOrientation</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[SexualOrientation]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>SexualOrientation</remote-alias>
+        <ordinal>20</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>MaritalStatus</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[MaritalStatus]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>MaritalStatus</remote-alias>
+        <ordinal>21</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Dim_DateOfBirth_DateKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[Dim_DateOfBirth_DateKey]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Dim_DateOfBirth_DateKey</remote-alias>
+        <ordinal>22</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Dim_DateOfDeath_DateKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[Dim_DateOfDeath_DateKey]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Dim_DateOfDeath_DateKey</remote-alias>
+        <ordinal>23</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Dim_Estimated_DateOfBirth_DateKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[Dim_Estimated_DateOfBirth_DateKey]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Dim_Estimated_DateOfBirth_DateKey</remote-alias>
+        <ordinal>24</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Dim_Estimated_DateOfDelivery_DateKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[Dim_Estimated_DateOfDelivery_DateKey]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Dim_Estimated_DateOfDelivery_DateKey</remote-alias>
+        <ordinal>25</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Ethnicity_Type</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Ethnicity_Type]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Ethnicity_Type</remote-alias>
+        <ordinal>26</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Ethnicity_SubType</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Ethnicity_SubType]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Ethnicity_SubType</remote-alias>
+        <ordinal>27</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Religion</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Religion]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Religion</remote-alias>
+        <ordinal>28</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Nationality</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Nationality]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Nationality</remote-alias>
+        <ordinal>29</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Immirgration_Status</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Immirgration_Status]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Immirgration_Status</remote-alias>
+        <ordinal>30</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Residency</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Residency]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Residency</remote-alias>
+        <ordinal>31</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Occupation</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Occupation]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Occupation</remote-alias>
+        <ordinal>32</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Language</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Language]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Language</remote-alias>
+        <ordinal>33</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>contact_type</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[contact_type]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>contact_type</remote-alias>
+        <ordinal>34</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>contact_usage</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[contact_usage]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>contact_usage</remote-alias>
+        <ordinal>35</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>contact_value</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[contact_value]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>contact_value</remote-alias>
+        <ordinal>36</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Person_Type</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Person_Type]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Person_Type</remote-alias>
+        <ordinal>37</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Source_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Source_Timestamp (DimPerson)]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Source_Timestamp</remote-alias>
+        <ordinal>38</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Audit_Create_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Audit_Create_Timestamp (DimPerson)]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Audit_Create_Timestamp</remote-alias>
+        <ordinal>39</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Audit_Update_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Audit_Update_Timestamp (DimPerson)]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Audit_Update_Timestamp</remote-alias>
+        <ordinal>40</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>DateOfBirth_DateTime</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[DateOfBirth_DateTime]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>DateOfBirth_DateTime</remote-alias>
+        <ordinal>41</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>DateOfDeath_DateTime</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[DateOfDeath_DateTime]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>DateOfDeath_DateTime</remote-alias>
+        <ordinal>42</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>EstimatedDateOfBirth_DateTime</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[EstimatedDateOfBirth_DateTime]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>EstimatedDateOfBirth_DateTime</remote-alias>
+        <ordinal>43</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>EstimatedDateOfDelivery_DateTime</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[EstimatedDateOfDelivery_DateTime]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>EstimatedDateOfDelivery_DateTime</remote-alias>
+        <ordinal>44</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Age</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Age]</local-name>
+        <parent-name>[Person]</parent-name>
+        <remote-alias>Age</remote-alias>
+        <ordinal>45</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>50</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>DimPersonKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[DimPersonKey (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>DimPersonKey</remote-alias>
+        <ordinal>47</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Id</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Id (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Id</remote-alias>
+        <ordinal>48</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Title</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Title (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Title</remote-alias>
+        <ordinal>49</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Name</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Name (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Name</remote-alias>
+        <ordinal>50</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Gender</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Gender (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Gender</remote-alias>
+        <ordinal>51</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>SexualOrientation</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[SexualOrientation (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>SexualOrientation</remote-alias>
+        <ordinal>52</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>MaritalStatus</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[MaritalStatus (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>MaritalStatus</remote-alias>
+        <ordinal>53</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Dim_DateOfBirth_DateKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[Dim_DateOfBirth_DateKey (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Dim_DateOfBirth_DateKey</remote-alias>
+        <ordinal>54</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Dim_DateOfDeath_DateKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[Dim_DateOfDeath_DateKey (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Dim_DateOfDeath_DateKey</remote-alias>
+        <ordinal>55</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Dim_Estimated_DateOfBirth_DateKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[Dim_Estimated_DateOfBirth_DateKey (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Dim_Estimated_DateOfBirth_DateKey</remote-alias>
+        <ordinal>56</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Dim_Estimated_DateOfDelivery_DateKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[Dim_Estimated_DateOfDelivery_DateKey (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Dim_Estimated_DateOfDelivery_DateKey</remote-alias>
+        <ordinal>57</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Ethnicity_Type</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Ethnicity_Type (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Ethnicity_Type</remote-alias>
+        <ordinal>58</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Ethnicity_SubType</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Ethnicity_SubType (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Ethnicity_SubType</remote-alias>
+        <ordinal>59</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Religion</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Religion (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Religion</remote-alias>
+        <ordinal>60</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Nationality</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Nationality (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Nationality</remote-alias>
+        <ordinal>61</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Immirgration_Status</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Immirgration_Status (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Immirgration_Status</remote-alias>
+        <ordinal>62</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Residency</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Residency (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Residency</remote-alias>
+        <ordinal>63</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Occupation</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Occupation (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Occupation</remote-alias>
+        <ordinal>64</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Language</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Language (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Language</remote-alias>
+        <ordinal>65</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>contact_type</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[contact_type (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>contact_type</remote-alias>
+        <ordinal>66</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>contact_usage</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[contact_usage (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>contact_usage</remote-alias>
+        <ordinal>67</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>contact_value</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[contact_value (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>contact_value</remote-alias>
+        <ordinal>68</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Person_Type</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Person_Type (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Person_Type</remote-alias>
+        <ordinal>69</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Source_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Source_Timestamp (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Source_Timestamp</remote-alias>
+        <ordinal>70</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Audit_Create_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Audit_Create_Timestamp (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Audit_Create_Timestamp</remote-alias>
+        <ordinal>71</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Audit_Update_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Audit_Update_Timestamp (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Audit_Update_Timestamp</remote-alias>
+        <ordinal>72</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>DateOfBirth_DateTime</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[DateOfBirth_DateTime (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>DateOfBirth_DateTime</remote-alias>
+        <ordinal>73</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>DateOfDeath_DateTime</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[DateOfDeath_DateTime (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>DateOfDeath_DateTime</remote-alias>
+        <ordinal>74</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>EstimatedDateOfBirth_DateTime</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[EstimatedDateOfBirth_DateTime (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>EstimatedDateOfBirth_DateTime</remote-alias>
+        <ordinal>75</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>EstimatedDateOfDelivery_DateTime</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[EstimatedDateOfDelivery_DateTime (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>EstimatedDateOfDelivery_DateTime</remote-alias>
+        <ordinal>76</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Age</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Age (Custom SQL Query)]</local-name>
+        <parent-name>[Author]</parent-name>
+        <remote-alias>Age</remote-alias>
+        <ordinal>77</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>50</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>dim_owner_teamkey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[dim_owner_teamkey]</local-name>
+        <parent-name>[Sumrefrralworkflow]</parent-name>
+        <remote-alias>dim_owner_teamkey</remote-alias>
+        <ordinal>79</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Id</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Id (Custom SQL Query1)]</local-name>
+        <parent-name>[Sumrefrralworkflow]</parent-name>
+        <remote-alias>Id</remote-alias>
+        <ordinal>80</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Item_Type</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Item_Type]</local-name>
+        <parent-name>[Sumrefrralworkflow]</parent-name>
+        <remote-alias>Item_Type</remote-alias>
+        <ordinal>81</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>6</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>DimTeamKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[DimTeamKey]</local-name>
+        <parent-name>[Team]</parent-name>
+        <remote-alias>DimTeamKey</remote-alias>
+        <ordinal>83</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Id</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Id]</local-name>
+        <parent-name>[Team]</parent-name>
+        <remote-alias>Id</remote-alias>
+        <ordinal>84</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Name</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Name]</local-name>
+        <parent-name>[Team]</parent-name>
+        <remote-alias>Name</remote-alias>
+        <ordinal>85</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Type</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Type]</local-name>
+        <parent-name>[Team]</parent-name>
+        <remote-alias>Type</remote-alias>
+        <ordinal>86</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Source_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Source_Timestamp]</local-name>
+        <parent-name>[Team]</parent-name>
+        <remote-alias>Source_Timestamp</remote-alias>
+        <ordinal>87</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Audit_Create_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Audit_Create_Timestamp]</local-name>
+        <parent-name>[Team]</parent-name>
+        <remote-alias>Audit_Create_Timestamp</remote-alias>
+        <ordinal>88</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Audit_Update_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Audit_Update_Timestamp]</local-name>
+        <parent-name>[Team]</parent-name>
+        <remote-alias>Audit_Update_Timestamp</remote-alias>
+        <ordinal>89</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>DimTeamKey</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[DimTeamKey (DimTeam1)]</local-name>
+        <parent-name>[SubjectTeam]</parent-name>
+        <remote-alias>DimTeamKey</remote-alias>
+        <ordinal>91</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_BIGINT"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_SBIGINT"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Id</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Id (DimTeam1)]</local-name>
+        <parent-name>[SubjectTeam]</parent-name>
+        <remote-alias>Id</remote-alias>
+        <ordinal>92</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Name</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Name (DimTeam1)]</local-name>
+        <parent-name>[SubjectTeam]</parent-name>
+        <remote-alias>Name</remote-alias>
+        <ordinal>93</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Type</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[Type (DimTeam1)]</local-name>
+        <parent-name>[SubjectTeam]</parent-name>
+        <remote-alias>Type</remote-alias>
+        <ordinal>94</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>128</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag="2147483649" name="LEN_RUS_S2_VWIN" />
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_VARCHAR"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_CHAR"</attribute>
+          <attribute datatype="string" name="TypeIsVarchar">"true"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Source_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Source_Timestamp (DimTeam1)]</local-name>
+        <parent-name>[SubjectTeam]</parent-name>
+        <remote-alias>Source_Timestamp</remote-alias>
+        <ordinal>95</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Audit_Create_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Audit_Create_Timestamp (DimTeam1)]</local-name>
+        <parent-name>[SubjectTeam]</parent-name>
+        <remote-alias>Audit_Create_Timestamp</remote-alias>
+        <ordinal>96</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+      <metadata-record class="column">
+        <remote-name>Audit_Update_Timestamp</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[Audit_Update_Timestamp (DimTeam1)]</local-name>
+        <parent-name>[SubjectTeam]</parent-name>
+        <remote-alias>Audit_Update_Timestamp</remote-alias>
+        <ordinal>97</ordinal>
+        <local-type>datetime</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <attributes>
+          <attribute datatype="string" name="DebugRemoteType">"SQL_TYPE_TIMESTAMP"</attribute>
+          <attribute datatype="string" name="DebugWireType">"SQL_C_TYPE_TIMESTAMP"</attribute>
+        </attributes>
+      </metadata-record>
+    </metadata-records>
+  </connection>
+  <aliases enabled="yes" />
+  <column datatype="string" hidden="true" name="[Age (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Age]" role="dimension" type="nominal" />
+  <column datatype="datetime" hidden="true" name="[Audit_Create_Timestamp (Custom SQL Query)]" role="dimension" type="ordinal" />
+  <column caption="Audit Create Timestamp (DimPerson)" datatype="datetime" hidden="true" name="[Audit_Create_Timestamp (DimPerson)]" role="dimension" type="ordinal" />
+  <column caption="Audit Create Timestamp (DimTeam1)" datatype="datetime" hidden="true" name="[Audit_Create_Timestamp (DimTeam1)]" role="dimension" type="ordinal" />
+  <column caption="Audit Create Timestamp" datatype="datetime" hidden="true" name="[Audit_Create_Timestamp]" role="dimension" type="ordinal" />
+  <column datatype="datetime" hidden="true" name="[Audit_Update_Timestamp (Custom SQL Query)]" role="dimension" type="ordinal" />
+  <column caption="Audit Update Timestamp (DimPerson)" datatype="datetime" hidden="true" name="[Audit_Update_Timestamp (DimPerson)]" role="dimension" type="ordinal" />
+  <column caption="Audit Update Timestamp (DimTeam1)" datatype="datetime" hidden="true" name="[Audit_Update_Timestamp (DimTeam1)]" role="dimension" type="ordinal" />
+  <column caption="Audit Update Timestamp" datatype="datetime" hidden="true" name="[Audit_Update_Timestamp]" role="dimension" type="ordinal" />
+  <column caption="Author Id" datatype="string" name="[AuthorId]" role="dimension" type="nominal" />
+  <column caption="Subject Type" datatype="string" name="[Calculation_5517753991601610752]" role="dimension" type="nominal">
+    <calculation class="tableau" formula="IFNULL([Item_Type],'person')" />
+  </column>
+  <column caption="Client Aware Flag" datatype="boolean" name="[ClientAwareFlag]" role="dimension" type="nominal" />
+  <column caption="Created On" datatype="datetime" name="[CreatedOn]" role="dimension" type="ordinal" />
+  <column datatype="datetime" hidden="true" name="[DateOfBirth_DateTime (Custom SQL Query)]" role="dimension" type="ordinal" />
+  <column caption="DateOfBirth DateTime" datatype="datetime" hidden="true" name="[DateOfBirth_DateTime]" role="dimension" type="ordinal" />
+  <column datatype="datetime" hidden="true" name="[DateOfDeath_DateTime (Custom SQL Query)]" role="dimension" type="ordinal" />
+  <column caption="DateOfDeath DateTime" datatype="datetime" hidden="true" name="[DateOfDeath_DateTime]" role="dimension" type="ordinal" />
+  <column caption="DimPersonKeyâ—™" datatype="integer" hidden="true" name="[DimPersonKey (Custom SQL Query)]" role="measure" type="quantitative" />
+  <column caption="Dim Person Key" datatype="integer" hidden="true" name="[DimPersonKey]" role="dimension" type="ordinal" />
+  <column caption="Subject Team Key" datatype="integer" name="[DimTeamKey (DimTeam1)]" role="dimension" type="ordinal" />
+  <column caption="Dim Team Key" datatype="integer" hidden="true" name="[DimTeamKey]" role="dimension" type="ordinal" />
+  <column caption="Dim Warning Key" datatype="integer" hidden="true" name="[DimWarningKey]" role="dimension" type="ordinal" />
+  <column datatype="integer" hidden="true" name="[Dim_DateOfBirth_DateKey (Custom SQL Query)]" role="measure" type="quantitative" />
+  <column caption="Dim DateOfBirth DateKey" datatype="integer" hidden="true" name="[Dim_DateOfBirth_DateKey]" role="dimension" type="ordinal" />
+  <column datatype="integer" hidden="true" name="[Dim_DateOfDeath_DateKey (Custom SQL Query)]" role="measure" type="quantitative" />
+  <column caption="Dim DateOfDeath DateKey" datatype="integer" hidden="true" name="[Dim_DateOfDeath_DateKey]" role="dimension" type="ordinal" />
+  <column datatype="integer" hidden="true" name="[Dim_Estimated_DateOfBirth_DateKey (Custom SQL Query)]" role="measure" type="quantitative" />
+  <column caption="Dim Estimated DateOfBirth DateKey" datatype="integer" hidden="true" name="[Dim_Estimated_DateOfBirth_DateKey]" role="dimension" type="ordinal" />
+  <column datatype="integer" hidden="true" name="[Dim_Estimated_DateOfDelivery_DateKey (Custom SQL Query)]" role="measure" type="quantitative" />
+  <column caption="Dim Estimated DateOfDelivery DateKey" datatype="integer" hidden="true" name="[Dim_Estimated_DateOfDelivery_DateKey]" role="dimension" type="ordinal" />
+  <column caption="Subject Person Key" datatype="integer" hidden="true" name="[Dim_Subject_PersonKey]" role="dimension" type="ordinal" />
+  <column datatype="datetime" hidden="true" name="[EstimatedDateOfBirth_DateTime (Custom SQL Query)]" role="dimension" type="ordinal" />
+  <column caption="EstimatedDateOfBirth DateTime" datatype="datetime" hidden="true" name="[EstimatedDateOfBirth_DateTime]" role="dimension" type="ordinal" />
+  <column datatype="datetime" hidden="true" name="[EstimatedDateOfDelivery_DateTime (Custom SQL Query)]" role="dimension" type="ordinal" />
+  <column caption="EstimatedDateOfDelivery DateTime" datatype="datetime" hidden="true" name="[EstimatedDateOfDelivery_DateTime]" role="dimension" type="ordinal" />
+  <column datatype="string" hidden="true" name="[Ethnicity_SubType (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column caption="Ethnicity SubType" datatype="string" hidden="true" name="[Ethnicity_SubType]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Ethnicity_Type (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column caption="Ethnicity Type" datatype="string" hidden="true" name="[Ethnicity_Type]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Gender (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Gender]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Id (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Id (Custom SQL Query1)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Id (DimPerson)]" role="dimension" type="nominal" />
+  <column caption="Subject Team Id " datatype="string" name="[Id (DimTeam1)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Id]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Immirgration_Status (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column caption="Immirgration Status" datatype="string" hidden="true" name="[Immirgration_Status]" role="dimension" type="nominal" />
+  <column caption="Subject Type2" datatype="string" hidden="true" name="[Item_Type]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Language (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Language]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[MaritalStatus (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column caption="Marital Status" datatype="string" hidden="true" name="[MaritalStatus]" role="dimension" type="nominal" />
+  <column caption="Author Name " datatype="string" name="[Name (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column caption="Subject Name" datatype="string" name="[Name (DimPerson)]" role="dimension" type="nominal" />
+  <column caption="Subject Team Name" datatype="string" name="[Name (DimTeam1)]" role="dimension" type="nominal" />
+  <column caption="Author Team Name" datatype="string" name="[Name]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Nationality (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Nationality]" role="dimension" type="nominal" />
+  <column datatype="integer" name="[Number of Records]" role="measure" type="quantitative" user:auto-column="numrec">
+    <calculation class="tableau" formula="1" />
+  </column>
+  <column datatype="string" hidden="true" name="[Occupation (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Occupation]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Person_Type (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column caption="Person Type" datatype="string" hidden="true" name="[Person_Type]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Religion (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Religion]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Residency (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Residency]" role="dimension" type="nominal" />
+  <column caption="Review by date" datatype="datetime" name="[Reviewonorafterdate]" role="dimension" type="ordinal" />
+  <column datatype="string" hidden="true" name="[SexualOrientation (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column caption="Sexual Orientation" datatype="string" hidden="true" name="[SexualOrientation]" role="dimension" type="nominal" />
+  <column datatype="datetime" hidden="true" name="[Source_Timestamp (Custom SQL Query)]" role="dimension" type="ordinal" />
+  <column caption="Source Timestamp (DimPerson)" datatype="datetime" hidden="true" name="[Source_Timestamp (DimPerson)]" role="dimension" type="ordinal" />
+  <column caption="Source Timestamp (DimTeam1)" datatype="datetime" hidden="true" name="[Source_Timestamp (DimTeam1)]" role="dimension" type="ordinal" />
+  <column caption="Source Timestamp" datatype="datetime" hidden="true" name="[Source_Timestamp]" role="dimension" type="ordinal" />
+  <column caption="Warning Status" datatype="string" name="[Status]" role="dimension" type="nominal" />
+  <column caption="Subject Id" datatype="string" name="[SubjectId]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Title (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Title (DimPerson)]" role="dimension" type="nominal" />
+  <column caption="Warning Type" datatype="string" name="[Title]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Type (DimTeam1)]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[Type]" role="dimension" type="nominal" />
+  <column caption="Warning Id" datatype="string" name="[WarningId]" role="dimension" type="nominal" />
+  <column caption="Warning Type1" datatype="string" hidden="true" name="[WarningType]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[contact_type (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column caption="Contact Type" datatype="string" hidden="true" name="[contact_type]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[contact_usage (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column caption="Contact Usage" datatype="string" hidden="true" name="[contact_usage]" role="dimension" type="nominal" />
+  <column datatype="string" hidden="true" name="[contact_value (Custom SQL Query)]" role="dimension" type="nominal" />
+  <column caption="Contact Value" datatype="string" hidden="true" name="[contact_value]" role="dimension" type="nominal" />
+  <column datatype="integer" hidden="true" name="[dim_owner_teamkey]" role="measure" type="quantitative" />
+  <column caption="Author Team Id" datatype="string" name="[teamId]" role="dimension" type="nominal" />
+  <folder name="Author" role="dimensions">
+    <folder-item name="[AuthorId]" type="field" />
+    <folder-item name="[Name (Custom SQL Query)]" type="field" />
+    <folder-item name="[Name]" type="field" />
+    <folder-item name="[teamId]" type="field" />
+  </folder>
+  <folder name="Person" role="dimensions">
+    <folder-item name="[Calculation_5517753991601610752]" type="field" />
+    <folder-item name="[DimTeamKey (DimTeam1)]" type="field" />
+    <folder-item name="[Id (DimTeam1)]" type="field" />
+    <folder-item name="[Name (DimPerson)]" type="field" />
+    <folder-item name="[Name (DimTeam1)]" type="field" />
+    <folder-item name="[SubjectId]" type="field" />
+  </folder>
+  <folder name="Warning" role="dimensions">
+    <folder-item name="[ClientAwareFlag]" type="field" />
+    <folder-item name="[Comments]" type="field" />
+    <folder-item name="[CreatedOn]" type="field" />
+    <folder-item name="[Reviewonorafterdate]" type="field" />
+    <folder-item name="[Status]" type="field" />
+    <folder-item name="[Title]" type="field" />
+    <folder-item name="[WarningId]" type="field" />
+  </folder>
+  <layout dim-ordering="alphabetic" dim-percentage="0.752201" measure-ordering="alphabetic" measure-percentage="0.247799" rowDisplayCount="100" show-structure="false" />
+  <semantic-values>
+    <semantic-value key="[Country].[Name]" value="&quot;United States&quot;" />
+  </semantic-values>
+</datasource>
